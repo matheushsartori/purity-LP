@@ -115,6 +115,119 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* 3ª Seção - O Que Mapeamos */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#244545] mb-8 leading-tight">
+              Com apenas a sua amostra de urina,
+              <br />
+              conseguimos mapear:
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <Card className="border border-gray-200 hover:border-[#d9b975]/50 transition-colors bg-white shadow-sm p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-[#d9b975] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#244545] mb-2">
+                        Parasitas (Vermes, Vírus, Fungos e Bactérias)
+                      </h3>
+                      <p className="text-gray-600">
+                        Identificamos todos os tipos de parasitas que podem estar causando seus sintomas
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="border border-gray-200 hover:border-[#d9b975]/50 transition-colors bg-white shadow-sm p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-[#d9b975] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#244545] mb-2">
+                        Metais Pesados e Toxinas Ambientais
+                      </h3>
+                      <p className="text-gray-600">
+                        Detectamos acúmulo de metais pesados e toxinas que intoxicam seu organismo
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="border border-gray-200 hover:border-[#d9b975]/50 transition-colors bg-white shadow-sm p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-[#d9b975] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#244545] mb-2">
+                        Alimentos incompatíveis
+                      </h3>
+                      <p className="text-gray-600">
+                        Mapeamos quais alimentos estão causando inflamação no seu corpo
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              <div className="space-y-6">
+                <Card className="border border-gray-200 hover:border-[#d9b975]/50 transition-colors bg-white shadow-sm p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-[#d9b975] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#244545] mb-2">
+                        Deficiência de Vitaminas e Minerais
+                      </h3>
+                      <p className="text-gray-600">
+                        Identificamos exatamente quais nutrientes seu corpo precisa
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+
+                <Card className="border border-gray-200 hover:border-[#d9b975]/50 transition-colors bg-white shadow-sm p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-3 h-3 bg-[#d9b975] rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#244545] mb-2">
+                        Órgãos vibrando na frequência de adoecimento
+                      </h3>
+                      <p className="text-gray-600">
+                        Detectamos órgãos em processo de desequilíbrio antes dos sintomas aparecerem
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mb-12">
+            <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Isso é possível através da <span className="font-semibold text-[#244545]">tecnologia de biorressonância</span>, onde reagimos a energia celular contida na sua amostra biológica (urina), com cada um dos testadores abaixo:
+            </p>
+          </div>
+
+          {/* Espaço para foto do teste */}
+          <div className="text-center">
+            <div className="bg-gray-100 rounded-lg p-12 max-w-2xl mx-auto">
+              <Image
+                  src="/placeholder.svg?height=300&width=600"
+                  alt="Equipamento de Teste de Biorressonância"
+                  width={600}
+                  height={300}
+                  className="mx-auto rounded-lg shadow-md"
+              />
+              <p className="text-sm text-gray-500 mt-4 italic">
+                Equipamento de Biorressonância utilizado nos testes
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3ª Seção - Como Funciona */}
       <section className="py-20 bg-[#f4f2ea]">
         <div className="container mx-auto px-4">
@@ -1438,107 +1551,154 @@ export default function LandingPage() {
           <h2 className="text-center text-xl font-bold text-[#244545] mb-16 uppercase tracking-wide">
             Encerra em breve: 50% de desconto
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {/* 4 Testes */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-              <div className="mb-6 h-28 w-full flex items-center justify-center bg-gray-50 rounded-lg">
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* 4 Testes - Melhor valor */}
+            <div className="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center relative shadow-sm">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-teal-500 text-white text-md font-bold px-6 py-3 rounded">Melhor valor</span>
+              </div>
+
+              <h3 className="text-teal-600 font-bold text-base mb-4 text-center mt-4">4 Testes com 50% de Desconto</h3>
+
+              <div className="mb-4 h-24 w-full flex items-center justify-center">
                 <Image
-                  src="/images/4.png"
-                  alt="4 Testes de Biorressonância"
-                  width={140}
-                  height={90}
-                  className="object-contain max-w-full max-h-full"
+                    src="/images/4.png"
+                    alt="4 Testes de Biorressonância"
+                    width={120}
+                    height={80}
+                    className="object-contain max-w-full max-h-full"
                 />
               </div>
-              <h3 className="text-black font-bold text-lg mb-3 text-center h-14">4 Testes com 50% de Desconto</h3>
-              <p className="text-gray-600 text-sm mb-6 text-center font-medium h-10">
-                Ideal para casal e dois filhos
-              </p>
-              <div className="mb-6 text-center">
-                <span className="line-through text-gray-500 text-base font-medium">R$2.400,00</span>
-                <span className="text-gray-600 text-sm"> por</span>
-                <span className="block text-black text-3xl font-bold mt-2">12x R$ 122,87</span>
+
+              <p className="text-gray-600 text-sm mb-4 text-center">Ideal para casal e dois filhos</p>
+
+              <div className="mb-4 text-center">
+                <div className="mb-1">
+                  <span className="line-through text-red-500 text-sm">R$2.400,00</span>
+                  <span className="text-gray-600 text-sm"> por</span>
+                </div>
+                <div className="text-teal-600">
+                  <span className="text-lg font-bold">12x </span>
+                  <span className="text-3xl font-bold">R$ 122,87</span>
+                </div>
               </div>
-              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-sm w-full mb-4 transition-colors">
+
+              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-md w-full mb-3">
                 QUERO 4 TESTES
               </Button>
-              <span className="text-black text-sm font-bold mb-2">70% esgotado</span>
-              <span className="text-gray-500 text-sm font-medium">ECONOMIZE R$1.200,00 REAIS</span>
+
+              <span className="text-green-600 text-sm font-medium italic mb-2">70% esgotado</span>
+              <span className="text-gray-500 text-xs">ECONOMIZE R$1.200,00 REAIS</span>
             </div>
 
-            {/* 3 Testes */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-              <div className="mb-6 h-28 w-full flex items-center justify-center bg-gray-50 rounded-lg">
+            {/* 3 Testes - Mais popular */}
+            <div className="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center relative shadow-sm">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <span className="bg-teal-500 text-white text-md font-bold px-6 py-3 rounded">Mais popular</span>
+              </div>
+
+              <h3 className="text-teal-600 font-bold text-base mb-4 text-center mt-4">3 Testes com 50% de desconto</h3>
+
+              <div className="mb-4 h-24 w-full flex items-center justify-center">
                 <Image
-                  src="/images/3.png"
-                  alt="3 Testes de Biorressonância"
-                  width={140}
-                  height={90}
-                  className="object-contain max-w-full max-h-full"
+                    src="/images/4.png"
+                    alt="3 Testes de Biorressonância"
+                    width={120}
+                    height={80}
+                    className="object-contain max-w-full max-h-full"
                 />
               </div>
-              <h3 className="text-black font-bold text-lg mb-3 text-center h-14">3 Testes com 50% de desconto</h3>
-              <p className="text-gray-600 text-sm mb-6 text-center font-medium h-10">Ideal para casal e um filho</p>
-              <div className="mb-6 text-center">
-                <span className="line-through text-gray-500 text-base font-medium">R$1.800,00</span>
-                <span className="text-gray-600 text-sm"> por</span>
-                <span className="block text-black text-3xl font-bold mt-2">12x R$ 92,15</span>
+
+              <p className="text-gray-600 text-sm mb-4 text-center">Ideal para casal e um filho</p>
+
+              <div className="mb-4 text-center">
+                <div className="mb-1">
+                  <span className="line-through text-red-500 text-sm">R$1.800,00</span>
+                  <span className="text-gray-600 text-sm"> por</span>
+                </div>
+                <div className="text-teal-600">
+                  <span className="text-lg font-bold">12x </span>
+                  <span className="text-3xl font-bold">R$ 92,15</span>
+                </div>
               </div>
-              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-sm w-full mb-4 transition-colors">
+
+              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-md w-full mb-3">
                 QUERO 3 TESTES
               </Button>
-              <span className="text-black text-sm font-bold mb-2">70% esgotado</span>
-              <span className="text-gray-500 text-sm font-medium">ECONOMIZE R$900,00 REAIS</span>
+
+              <span className="text-green-600 text-sm font-medium italic mb-2">70% esgotado</span>
+              <span className="text-gray-500 text-xs">ECONOMIZE R$900,00 REAIS</span>
             </div>
 
             {/* 2 Testes */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-              <div className="mb-6 h-28 w-full flex items-center justify-center bg-gray-50 rounded-lg">
+            <div className="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow-sm">
+              <h3 className="text-teal-600 font-bold text-base mb-4 text-center mt-4">2 Testes com 50% de Desconto</h3>
+
+              <div className="mb-4 h-24 w-full flex items-center justify-center">
                 <Image
-                  src="/images/2.png"
-                  alt="2 Testes de Biorressonância"
-                  width={140}
-                  height={90}
-                  className="object-contain max-w-full max-h-full"
+                    src="/images/4.png"
+                    alt="2 Testes de Biorressonância"
+                    width={120}
+                    height={80}
+                    className="object-contain max-w-full max-h-full"
                 />
               </div>
-              <h3 className="text-black font-bold text-lg mb-3 text-center h-14">2 Testes com 50% de desconto</h3>
-              <p className="text-gray-600 text-sm mb-6 text-center font-medium h-10">Ideal para casal</p>
-              <div className="mb-6 text-center">
-                <span className="line-through text-gray-500 text-base font-medium">R$1.200,00</span>
-                <span className="text-gray-600 text-sm"> por</span>
-                <span className="block text-black text-3xl font-bold mt-2">12x R$ 61,43</span>
+
+              <p className="text-gray-600 text-sm mb-4 text-center">Ideal para casal</p>
+
+              <div className="mb-4 text-center">
+                <div className="mb-1">
+                  <span className="line-through text-red-500 text-sm">R$1.200,00</span>
+                  <span className="text-gray-600 text-sm"> por</span>
+                </div>
+                <div className="text-teal-600">
+                  <span className="text-lg font-bold">12x </span>
+                  <span className="text-3xl font-bold">R$ 61,43</span>
+                </div>
               </div>
-              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-sm w-full mb-4 transition-colors">
+
+              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-md w-full mb-3">
                 QUERO 2 TESTES
               </Button>
-              <span className="text-black text-sm font-bold mb-2">70% esgotado</span>
-              <span className="text-gray-500 text-sm font-medium">ECONOMIZE R$600,00 REAIS</span>
+
+              <span className="text-green-600 text-sm font-medium italic mb-2">70% esgotado</span>
+              <span className="text-gray-500 text-xs">ECONOMIZE R$600,00 REAIS</span>
             </div>
 
             {/* 1 Teste */}
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
-              <div className="mb-6 h-28 w-full flex items-center justify-center bg-gray-50 rounded-lg">
+            <div className="bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center shadow-sm">
+              <h3 className="text-teal-600 font-bold text-base mb-4 text-center mt-4">1 Teste com 50% de Desconto</h3>
+
+              <div className="mb-4 h-24 w-full flex items-center justify-center">
                 <Image
-                  src="/images/1.png"
-                  alt="1 Teste de Biorressonância"
-                  width={140}
-                  height={90}
-                  className="object-contain max-w-full max-h-full"
+                    src="/images/4.png"
+                    alt="1 Teste de Biorressonância"
+                    width={120}
+                    height={80}
+                    className="object-contain max-w-full max-h-full"
                 />
               </div>
-              <h3 className="text-black font-bold text-lg mb-3 text-center h-14">1 Teste com 50% de Desconto</h3>
-              <p className="text-gray-600 text-sm mb-6 text-center font-medium h-10">Ideal para uma pessoa</p>
-              <div className="mb-6 text-center">
-                <span className="line-through text-gray-500 text-base font-medium">R$600,00</span>
-                <span className="text-gray-600 text-sm"> por</span>
-                <span className="block text-black text-3xl font-bold mt-2">12x R$ 30,12</span>
+
+              <p className="text-gray-600 text-sm mb-4 text-center">Ideal para uma pessoa</p>
+
+              <div className="mb-4 text-center">
+                <div className="mb-1">
+                  <span className="line-through text-red-500 text-sm">R$600,00</span>
+                  <span className="text-gray-600 text-sm"> por</span>
+                </div>
+                <div className="text-teal-600">
+                  <span className="text-lg font-bold">12x </span>
+                  <span className="text-3xl font-bold">R$ 30,12</span>
+                </div>
               </div>
-              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full text-sm w-full mb-4 transition-colors">
+
+              <Button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded text-md w-full mb-3">
                 QUERO 1 TESTE
               </Button>
-              <span className="text-black text-sm font-bold mb-2">70% esgotado</span>
-              <span className="text-gray-500 text-sm font-medium">ECONOMIZE R$300,00 REAIS</span>
+
+              <span className="text-green-600 text-sm font-medium italic mb-2">70% esgotado</span>
+              <span className="text-gray-500 text-xs">ECONOMIZE R$300,00 REAIS</span>
             </div>
           </div>
         </div>

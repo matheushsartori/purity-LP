@@ -1902,41 +1902,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Script de rastreamento */}
-        <Script
-          id="tracking-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function (){
-                var links = document.querySelectorAll('a[href*="pay.hotmart.com"]');
-                var original = "";
-                var sck = "";
-                var novoLink = ""
-                var arrURL = [];
-                var rastreio = "{{utm_campaign}}|{{utm_source}}|{{utm_medium}}|{{utm_content}}|{{utm_term}}" //Valor que vai entrar no SCK lá na HOTMART
-
-                if ("{{utm_medium}}" != "undefined"){ //Ele verifica se existe UTM na URL
-                  for( var i = 0; i < links.length; i++){
-                    console.log(1);
-                    original = links[i].getAttribute("href");
-                    sck = "sck=" + rastreio;
-                    arrURL = original.split('?');
-                   
-                    if(arrURL.length == 1){
-                      novoLink = original + "?" + sck;
-                    }
-                    else {
-                      novoLink = arrURL[0] + "?" + sck + "&" + arrURL[1];
-                    }
-                   
-                    links[i].setAttribute("href", novoLink)
-                  }
-                }
-              })(); 
-            `,
-          }}
-        />
       </div>
     </>
   )

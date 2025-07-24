@@ -42,31 +42,46 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function (){
-                var links = document.querySelectorAll('a[href*="pay.hotmart.com"]');
-                var original = "";
-                var sck = "";
-                var novoLink = ""
-                var arrURL = [];
-                var rastreio = "{{utm_campaign}}|{{utm_source}}|{{utm_medium}}|{{utm_content}}|{{utm_term}}" //Valor que vai entrar no SCK lá na HOTMART
-
-                if ("{{utm_medium}}" != "undefined"){ //Ele verifica se existe UTM na URL
-                  for( var i = 0; i < links.length; i++){
-                    console.log(1);
-                    original = links[i].getAttribute("href");
-                    sck = "sck=" + rastreio;
-                    arrURL = original.split('?');
-                   
-                    if(arrURL.length == 1){
-                      novoLink = original + "?" + sck;
+                function getUTMParams() {
+                  var urlParams = new URLSearchParams(window.location.search);
+                  var utmParams = {};
+                  urlParams.forEach(function(value, key) {
+                    if (key.startsWith('utm_')) {
+                      utmParams[key] = value;
                     }
-                    else {
-                      novoLink = arrURL[0] + "?" + sck + "&" + arrURL[1];
-                    }
-                   
-                    links[i].setAttribute("href", novoLink)
+                  });
+                  return utmParams;
+                }
+                function isExternal(link) {
+                  try {
+                    var url = new URL(link, window.location.origin);
+                    return url.hostname !== window.location.hostname;
+                  } catch (e) {
+                    return false;
                   }
                 }
-              })(); 
+                var utmParams = getUTMParams();
+                var utmKeys = Object.keys(utmParams);
+                if (utmKeys.length > 0) {
+                  var links = document.querySelectorAll('a[href]');
+                  for (var i = 0; i < links.length; i++) {
+                    var href = links[i].getAttribute('href');
+                    if (isExternal(href)) {
+                      var url;
+                      try {
+                        url = new URL(href, window.location.origin);
+                      } catch (e) {
+                        continue;
+                      }
+                      // Adiciona/mescla os parâmetros UTM
+                      utmKeys.forEach(function(key) {
+                        url.searchParams.set(key, utmParams[key]);
+                      });
+                      links[i].setAttribute('href', url.toString());
+                    }
+                  }
+                }
+              })();
             `,
           }}
         />

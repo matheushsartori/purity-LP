@@ -17,6 +17,25 @@ import {
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Script from "next/script"
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Teste de Biorressonância - Mapeie Parasitas, Metais Pesados e Deficiências | Clínica Purity',
+  description: 'Descubra com precisão parasitas intestinais, metais pesados, alimentos incompatíveis e deficiências nutricionais em apenas 7 dias. Mais de 5.000 casos de sucesso. Atendimento nacional.',
+  keywords: 'teste biorressonância, parasitas intestinais, giardia, candida albicans, metais pesados, mercúrio, chumbo, alumínio, alimentos incompatíveis, deficiências vitaminas, minerais, terreno biológico',
+  openGraph: {
+    title: 'Teste de Biorressonância - Descubra a Causa dos Seus Sintomas',
+    description: 'Com apenas uma amostra de urina, mapeamos parasitas, metais pesados, alimentos incompatíveis e deficiências. Tecnologia de biorressonância com 5.000+ casos de sucesso.',
+    images: [
+      {
+        url: '/images/testes.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Equipamento de Teste de Biorressonância da Clínica Purity',
+      },
+    ],
+  },
+}
 
 export default function LandingPage() {
   return (
@@ -52,7 +71,7 @@ export default function LandingPage() {
         <header className="bg-white shadow-sm border-b border-gray-100">
           <div className="container mx-auto px-4 py-6 flex items-center justify-center">
             <div className="flex items-center justify-center">
-              <Image src="/images/logo.svg" alt="Clínica Purity" height={80} width={250} />
+              <Image src="/images/logo.svg" alt="Clínica Purity - Testes de Biorressonância e Terreno Biológico" height={80} width={250} />
             </div>
           </div>
         </header>
@@ -87,7 +106,7 @@ export default function LandingPage() {
             <div className="mb-16">
               <Image
                 src="/images/lair2.png"
-                alt="Credibilidade da Clínica Purity"
+                alt="Clínica Purity - Maior referência em testes de biorressonância do Brasil"
                 width={800}
                 height={300}
                 className="mx-auto rounded-lg shadow-lg"
@@ -1546,9 +1565,9 @@ export default function LandingPage() {
         {/* 9ª Seção - Preços */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
-            <h1 className="text-center text-4xl font-bold text-[#244545] mb-36 uppercase tracking-wide">
-              Encerra em breve: 50% de desconto
-            </h1>
+            <h2 className="text-center text-4xl font-bold text-[#244545] mb-36 uppercase tracking-wide">
+              Encerra em breve: 50% de desconto nos Testes de Biorressonância
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {/* 4 Testes - Melhor valor */}
@@ -1711,7 +1730,7 @@ export default function LandingPage() {
                 <h2 className="text-4xl md:text-5xl font-bold text-[#244545] mb-8">Clínica Purity</h2>
                 <Image
                   src="/images/faixada-purity.png"
-                  alt="Clínica Purity"
+                  alt="Fachada da Clínica Purity em Curitiba - Especialista em Biorressonância"
                   width={800}
                   height={400}
                   className="mx-auto rounded-lg shadow-lg mb-12"

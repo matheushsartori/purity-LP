@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Permitir rastreamento de imagens
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Sitemap
+Sitemap: https://www.clinicapurity.com.br/sitemap.xml
+
+# Crawl-delay para evitar sobrecarga
+Crawl-delay: 1
